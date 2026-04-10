@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOKAMS KITCHEN N CRAFTS - Baking Memories, Crafting Moments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --accent-color: #E8A87C;
+            --bg-color: #FDF6EC;
+            --text-color: #2C1810;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(253, 246, 236, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-color);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--bg-color);
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu ul a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.1s;
+        }
+
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.pexels.com/photos/34322107/pexels-photo-34322107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content .tagline {
+            font-size: 1.8rem;
+            font-family: var(--font-display);
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #6d3410;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 2rem;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        #about { animation-delay: 0.2s; }
+        #services { animation-delay: 0.3s; }
+        #gallery { animation-delay: 0.4s; }
+        #testimonials { animation-delay: 0.5s; }
+        #contact { animation-delay: 0.6s; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+
+        /* About Section */
+        #about {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .about-text ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .about-text ul li {
+            padding: 0.5rem 0;
+            font-size: 1.05rem;
+        }
+
+        .about-text ul li::before {
+            content: '✓ ';
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Services Section */
+        #services {
+            background: var(--bg-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .service-card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Gallery Section */
+        #gallery {
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            height: 300px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            background: var(--bg-color);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        #contact {
+            background: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item strong {
+            display: block;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .contact-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 999;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            section {
+                padding: 60px 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            section {
+                padding: 48px 1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image,
+            .contact-image {
+                height: 300px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .services-grid,
+            .gallery-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">MOKAMS KITCHEN N CRAFTS</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Welcome to MOKAMS KITCHEN N CRAFTS</h1>
+            <p class="tagline">Baking Memories, Crafting Moments</p>
+            <p>We are your trusted partner for exquisite cakes, premium bakery items, professional catering services, and beautiful crafts in Alimosho, Lagos. From birthday celebrations to weddings, corporate events to intimate gatherings, we bring sweetness and creativity to every occasion.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Order Now</a>
+                <a href="#services" class="btn btn-secondary">View Our Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Your Sweet & Creative Destination in Alimosho</h2>
+            <div class="about-content">
+                <img src="https://images.pexels.com/photos/33387835/pexels-photo-33387835.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="MOKAMS Kitchen" class="about-image">
+                <div class="about-text">
+                    <p>At MOKAMS KITCHEN N CRAFTS, we believe every celebration deserves something special. Located in the heart of Igando, Lagos, we've been serving the Alimosho community with passion, quality, and creativity.</p>
+                    <p>Our talented team combines traditional baking excellence with modern design innovation to create cakes that taste as amazing as they look. Whether you need a custom wedding cake, corporate catering, fresh daily bread, or handcrafted items for your special event, we deliver excellence every single time.</p>
+                    <p>We use only the finest ingredients, maintain the highest hygiene standards, and work closely with each client to bring their vision to life. From your first consultation to delivery, we're committed to making your experience memorable.</p>
+                    <h3>What sets us apart:</h3>
+                    <ul>
+                        <li>Custom cake designs tailored to your theme</li>
+                        <li>Fresh, high-quality ingredients in every product</li>
+                        <li>Professional catering for events of all sizes</li>
+                        <li>Unique handcrafted items and decorations</li>
+                        <li>Reliable delivery across Lagos</li>
+                        <li>Competitive pricing without compromising quality</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">What We Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎂</div>
+                    <h3>CUSTOM CAKES</h3>
+                    <p>Wedding cakes, birthday cakes, anniversary cakes, corporate cakes – we design and bake custom cakes for every occasion. Choose from chocolate, vanilla, red velvet, fruit cake, and more. Every cake is uniquely crafted to match your theme and taste preferences.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🥖</div>
+                    <h3>BAKERY ITEMS</h3>
+                    <p>Fresh daily bread, pastries, meat pies, sausage rolls, chin chin, puff-puff, doughnuts, cookies, and more. Perfect for breakfast, snacks, or events. We use quality ingredients and traditional recipes that Lagosians love.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🍽️</div>
+                    <h3>CATERING SERVICES</h3>
+                    <p>Professional catering for weddings, birthdays, corporate events, conferences, and private parties. We offer Nigerian dishes, intercontinental cuisine, small chops, and refreshments. Our team handles everything from menu planning to setup and service.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✂️</div>
+                    <h3>CRAFTS & DECORATIONS</h3>
+                    <p>Handmade craft items, event decorations, souvenirs, gift hampers, and creative designs for your special occasions. We create beautiful, memorable pieces that add that personal touch to your celebrations.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📦</div>
+                    <h3>Bulk Orders & Delivery</h3>
+                    <p>We accept bulk orders for offices, schools, and events. Reliable delivery service available across Alimosho and surrounding Lagos areas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">A Taste of Our Creations</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem;">Explore some of our recent projects and products. From elegant wedding cakes to everyday bakery favorites, each item is made with care, creativity, and the finest ingredients. These are real cakes and dishes we've created for clients across Lagos.</p>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem;">Every order is custom-made to your specifications. Contact us today to discuss your requirements and let us bring your vision to life.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/10599803/pexels-photo-10599803.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Wedding Cake">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/19847910/pexels-photo-19847910.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bakery Items">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/34322107/pexels-photo-34322107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Celebration Cake">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/33387835/pexels-photo-33387835.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Catering Setup">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/6140698/pexels-photo-6140698.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Event Catering">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/34136550/pexels-photo-34136550.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Custom Cakes">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Trusted by Lagos Families & Businesses</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"MOKAMS made my wedding cake and it was absolutely stunning! Everyone kept asking where we got it from. The taste was even better than the design. Thank you for making our day special!"</p>
+                    <div class="testimonial-author">— Blessing O., Ikeja</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"I've been buying bread and meat pies from MOKAMS for over two years now. Always fresh, always delicious. Their customer service is excellent too. Highly recommended!"</p>
+                    <div class="testimonial-author">— Mr. Adeyemi, Igando</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"They catered our company's end-of-year party with 200 guests. The food was amazing, service was professional, and everything was delivered on time. We'll definitely use them again."</p>
+                    <div class="testimonial-author">— Mrs. Okonkwo, Corporate Client</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p>"The birthday cake for my daughter's 5th birthday was exactly what we imagined! MOKAMS listened to what we wanted and delivered perfection. Thank you!"</p>
+                    <div class="testimonial-author">— Funmi A., Alimosho</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Ready to Order or Have Questions?</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>We're here to make your celebration sweeter! Whether you need a custom cake, catering services, bakery items, or craft decorations, MOKAMS KITCHEN N CRAFTS is ready to serve you.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>Visit Our Location:</strong>
+                            <p>29 Olalekan Onigbinde Close<br>Behind General Hospital Igando<br>Alimosho, Lagos</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <strong>Call or WhatsApp:</strong>
+                            <p><a href="tel:08026197995">0802 619 7995</a></p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <strong>Business Hours:</strong>
+                            <p>Monday - Saturday: 7:00 AM - 8:00 PM<br>Sunday: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+
+                    <h3>How to Order:</h3>
+                    <ol style="margin-left: 1.5rem; font-size: 1.05rem; line-height: 1.8;">
+                        <li>Contact us via phone or WhatsApp</li>
+                        <li>Share your requirements and preferred date</li>
+                        <li>We'll provide a quote and confirm details</li>
+                        <li>Make payment and we'll begin preparation</li>
+                        <li>Pick up or arrange delivery</li>
+                    </ol>
+
+                    <p style="margin-top: 1.5rem; font
