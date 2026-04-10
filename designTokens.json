@@ -1,0 +1,12 @@
+{
+  "primaryColor": "#8B4513",
+  "accentColor": "#E8A87C",
+  "bgColor": "#FDF6EC",
+  "textColor": "#2C1810",
+  "fontDisplay": "Playfair Display",
+  "fontBody": "Lato",
+  "borderRadius": "8px",
+  "layoutStyle": "immersive",
+  "uxPrinciple": "warm and inviting with appetite-driven engagement",
+  "cssVariables": "--color-primary:#8B4513; --color-accent:#E8A87C; --color-bg:#FDF6EC; --color-text:#2C1810; --font-display:Playfair Display; --font-body:Lato; --border-radius:8px;"
+}
