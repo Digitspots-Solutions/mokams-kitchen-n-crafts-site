@@ -1,0 +1,56 @@
+{
+  "businessName": "MOKAMS KITCHEN N CRAFTS",
+  "industry": "Food & Catering",
+  "tone": "warm and inviting",
+  "tagline": "Baking Memories, Crafting Moments",
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "copy": "Welcome to MOKAMS KITCHEN N CRAFTS\n\nBaking Memories, Crafting Moments\n\nWe are your trusted partner for exquisite cakes, premium bakery items, professional catering services, and beautiful crafts in Alimosho, Lagos. From birthday celebrations to weddings, corporate events to intimate gatherings, we bring sweetness and creativity to every occasion.\n\nOrder Now | View Our Menu",
+      "imagePrompt": "A vibrant, appetizing scene of a Nigerian bakery display featuring a stunning multi-tiered celebration cake as the centerpiece, surrounded by assorted pastries, cupcakes, and colorful craft items. Warm golden lighting, professional food photography style, with subtle Nigerian cultural elements like Ankara fabric patterns in the background. Shot in a modern Lagos bakery setting with wooden display counters.",
+      "layout": "centered"
+    },
+    {
+      "id": "about",
+      "name": "About Us",
+      "copy": "Your Sweet & Creative Destination in Alimosho\n\nAt MOKAMS KITCHEN N CRAFTS, we believe every celebration deserves something special. Located in the heart of Igando, Lagos, we've been serving the Alimosho community with passion, quality, and creativity.\n\nOur talented team combines traditional baking excellence with modern design innovation to create cakes that taste as amazing as they look. Whether you need a custom wedding cake, corporate catering, fresh daily bread, or handcrafted items for your special event, we deliver excellence every single time.\n\nWe use only the finest ingredients, maintain the highest hygiene standards, and work closely with each client to bring their vision to life. From your first consultation to delivery, we're committed to making your experience memorable.\n\nWhat sets us apart:\n• Custom cake designs tailored to your theme\n• Fresh, high-quality ingredients in every product\n• Professional catering for events of all sizes\n• Unique handcrafted items and decorations\n• Reliable delivery across Lagos\n• Competitive pricing without compromising quality",
+      "imagePrompt": "A warm, inviting Nigerian bakery kitchen interior with professional bakers in clean white uniforms decorating cakes. Natural sunlight streaming through windows, stainless steel equipment, colorful cake decorating tools, and trays of fresh pastries cooling. The scene captures the craftsmanship and care that goes into every product, with a focus on cleanliness and professionalism. Lagos bakery aesthetic.",
+      "layout": "split"
+    },
+    {
+      "id": "services",
+      "name": "Our Services",
+      "copy": "What We Offer\n\n🎂 CUSTOM CAKES\nWedding cakes, birthday cakes, anniversary cakes, corporate cakes – we design and bake custom cakes for every occasion. Choose from chocolate, vanilla, red velvet, fruit cake, and more. Every cake is uniquely crafted to match your theme and taste preferences.\n\n🥖 BAKERY ITEMS\nFresh daily bread, pastries, meat pies, sausage rolls, chin chin, puff-puff, doughnuts, cookies, and more. Perfect for breakfast, snacks, or events. We use quality ingredients and traditional recipes that Lagosians love.\n\n🍽️ CATERING SERVICES\nProfessional catering for weddings, birthdays, corporate events, conferences, and private parties. We offer Nigerian dishes, intercontinental cuisine, small chops, and refreshments. Our team handles everything from menu planning to setup and service.\n\n✂️ CRAFTS & DECORATIONS\nHandmade craft items, event decorations, souvenirs, gift hampers, and creative designs for your special occasions. We create beautiful, memorable pieces that add that personal touch to your celebrations.\n\n📦 Bulk Orders & Delivery\nWe accept bulk orders for offices, schools, and events. Reliable delivery service available across Alimosho and surrounding Lagos areas.",
+      "imagePrompt": "A professional grid layout showcasing four distinct service areas: a stunning decorated wedding cake with intricate piping, a basket of assorted fresh Nigerian bakery items (meat pies, chin chin, bread), an elegant buffet spread with Nigerian jollof rice and small chops for catering, and colorful handmade craft decorations with ribbons and gift items. Each quadrant is well-lit, magazine-quality food photography, representing excellence in each service category.",
+      "layout": "grid"
+    },
+    {
+      "id": "gallery",
+      "name": "Our Work",
+      "copy": "A Taste of Our Creations\n\nExplore some of our recent projects and products. From elegant wedding cakes to everyday bakery favorites, each item is made with care, creativity, and the finest ingredients. These are real cakes and dishes we've created for clients across Lagos.\n\nEvery order is custom-made to your specifications. Contact us today to discuss your requirements and let us bring your vision to life.",
+      "imagePrompt": "A beautiful collage-style gallery wall featuring various cakes, pastries, and catered events from a Lagos bakery. Images include: a three-tier white wedding cake with gold accents, colorful cupcakes arranged artistically, a spread of Nigerian small chops, decorative craft items, and happy customers at events. Professional photography with consistent lighting and styling, representing the diversity and quality of work.",
+      "layout": "grid"
+    },
+    {
+      "id": "testimonials",
+      "name": "What Our Customers Say",
+      "copy": "Trusted by Lagos Families & Businesses\n\n⭐⭐⭐⭐⭐\n\"MOKAMS made my wedding cake and it was absolutely stunning! Everyone kept asking where we got it from. The taste was even better than the design. Thank you for making our day special!\"\n— Blessing O., Ikeja\n\n⭐⭐⭐⭐⭐\n\"I've been buying bread and meat pies from MOKAMS for over two years now. Always fresh, always delicious. Their customer service is excellent too. Highly recommended!\"\n— Mr. Adeyemi, Igando\n\n⭐⭐⭐⭐⭐\n\"They catered our company's end-of-year party with 200 guests. The food was amazing, service was professional, and everything was delivered on time. We'll definitely use them again.\"\n— Mrs. Okonkwo, Corporate Client\n\n⭐⭐⭐⭐⭐\n\"The birthday cake for my daughter's 5th birthday was exactly what we imagined! MOKAMS listened to what we wanted and delivered perfection. Thank you!\"\n— Funmi A., Alimosho",
+      "imagePrompt": "A warm, friendly montage showing satisfied Nigerian customers at various celebrations: a bride and groom cutting their beautiful wedding cake, a happy child's birthday party with a colorful cake, a professional corporate event with catering setup, and close-up shots of delighted customers enjoying pastries. Natural, authentic photography capturing genuine joy and satisfaction. Lagos event photography style.",
+      "layout": "cards"
+    },
+    {
+      "id": "contact",
+      "name": "Get In Touch",
+      "copy": "Ready to Order or Have Questions?\n\nWe're here to make your celebration sweeter! Whether you need a custom cake, catering services, bakery items, or craft decorations, MOKAMS KITCHEN N CRAFTS is ready to serve you.\n\nVisit Our Location:\n29 Olalekan Onigbinde Close\nBehind General Hospital Igando\nAlimosho, Lagos\n\nCall or WhatsApp:\n0802 619 7995\n\nBusiness Hours:\nMonday - Saturday: 7:00 AM - 8:00 PM\nSunday: 9:00 AM - 6:00 PM\n\nHow to Order:\n1. Contact us via phone or WhatsApp\n2. Share your requirements and preferred date\n3. We'll provide a quote and confirm details\n4. Make payment and we'll begin preparation\n5. Pick up or arrange delivery\n\nWe Accept: Cash, Bank Transfer, POS\n\nFor bulk orders and event catering, please contact us at least 1 week in advance. Rush orders may be accommodated based on availability.\n\nFollow us on social media for daily specials, new products, and inspiration for your next celebration!\n\nLet's Create Something Special Together!",
+      "imagePrompt": "A welcoming Nigerian bakery storefront in Lagos with 'MOKAMS KITCHEN N CRAFTS' signage clearly visible. The scene shows the entrance with a warm, inviting atmosphere, a display window showcasing cakes and pastries, and the surrounding Igando neighborhood. Include a smartphone in the foreground displaying a WhatsApp chat screen, suggesting easy communication. Daytime photography, friendly and accessible aesthetic.",
+      "layout": "split"
+    }
+  ],
+  "contact": {
+    "phone": "0802 619 7995",
+    "email": "",
+    "address": "29 Olalekan Onigbinde Close, Behind General Hospital Igando, Alimosho, Lagos",
+    "whatsapp": "https://wa.me/2348026197995"
+  }
+}
